@@ -1,0 +1,102 @@
+<html>
+<head>
+<style>
+.page{
+background-color:#F1D4E5;
+}
+.contact{
+background-color:#78C1F3;
+text-align:center;
+margin-left:10%;
+padding:20;
+height:43%;
+width:30%;
+}
+#errormessage{
+color:black;
+text-decoration:underline;
+}
+nav{
+float:left;
+background:#468B97;
+}
+nav ul li{
+list-style-type:none;
+display: inline-block;
+}
+nav ul li a{
+text-decoration:none;
+color:white;
+font-size:20px;
+margin:20px;
+text-transform:uppercase;
+
+}
+</style>
+<script type="text/javascript">
+function validate(){
+var name=document.getElementById("name").value;
+var number=document.getElementById("number").value;
+var email=document.getElementById("email").value;
+var questions=document.getElementById("questions").value;
+var error=document.getElementById("errormessage");
+     if (name.length<3){
+	     error.innerHTML="Please enter a valid name";
+		 return false;
+		 }
+     if (isNaN(number)  || number.length !=10){
+	     error.innerHTML="Please enter a valid phone number";
+		 return false;
+		 }
+	 if  (email.indexOf("@") == -1 || email.length < 6){
+	     error.innerHTML="Please enter a valid phone number";
+		 return false;
+		}
+	 if  (questions.length<5){
+	     error.innerHTML="Please enter valid messgae";
+		 return false;
+		 }
+		 alert("Submitted successfully");
+		 return true;
+}
+</script>
+</head>
+<body >
+<center><h1>Contact Us</h1></center>
+<hr>
+<center>
+<nav>
+<ul>
+<li><a href="travel.html">Home</a>
+<li><a href ="accomodation.html">Hotels</a>
+<li><a href="thingstodo.html">Things To Do</a>
+<li><a href="restrauant.html">Restrauant</a>
+<li><a href="contactus.html">Contact us</a>
+</ul>
+
+</nav>
+<br>
+<br>
+<br>
+<br>
+</center>
+<div class="contact">
+<div id="errormessage"></div>
+<b>Please fill in this form:</b>
+<form onsubmit="return validate();">
+Name:<br>
+<input type="text" id="name">
+<br><br>
+Phone Number:<br>
+<input type="text" id="number">
+<br><br>
+Email:<br>
+<input type="text" id="email">
+<br><br>
+If you have any questions or feedback please write here:<br></b>
+<textarea id="questions"></textarea><br><br>
+<center><input type="submit"></center>
+</form>
+</div>
+</body>
+</html>
